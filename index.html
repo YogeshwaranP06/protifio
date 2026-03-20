@@ -192,9 +192,9 @@ nav {
   min-height: 100svh;
   padding: calc(var(--nav-h) + 3.5rem) clamp(1.2rem,5vw,4rem) clamp(3rem,6vw,5rem);
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
   align-items: center;
-  gap: clamp(2rem, 4vw, 5rem);
+  gap: clamp(1.5rem, 3vw, 4rem);
   position: relative; overflow: hidden;
 }
 .hero-orb {
@@ -213,7 +213,7 @@ nav {
 }
 @media (max-width: 600px) { .floating-code { display: none; } }
 
-.hero-text { position: relative; z-index: 2; min-width: 0; max-width: 500px; }
+.hero-text { position: relative; z-index: 2; min-width: 0; max-width: min(100%, 520px); }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: clamp(0.58rem, 1.6vw, 0.7rem); letter-spacing: 0.13em; text-transform: uppercase;
@@ -349,7 +349,8 @@ nav {
 @media (max-width: 480px) {
   .hero { padding-top:calc(var(--nav-h)+2rem); }
   .hero-tag { justify-content:center; max-width:100%; text-align:center; line-height:1.5; }
-  .hero-name { flex-direction:column; align-items:center; gap:0.08em; font-size:clamp(2.15rem, 12vw, 3.35rem); }
+  .hero-name { flex-direction:column; align-items:center; gap:0.08em; font-size:clamp(1.75rem, 9.5vw, 2.8rem); line-height:1; }
+  .hero-name .line1, .hero-name .line2 { white-space:normal; overflow-wrap:anywhere; text-align:center; }
   .profile-card { padding:1.15rem; }
   .profile-stats { gap:0.45rem; }
   .stat-label { font-size:0.54rem; }
@@ -366,7 +367,7 @@ nav {
 }
 
 /* ===================== SECTIONS ===================== */
-section { padding: clamp(3.5rem,7vw,8rem) clamp(1.2rem,5vw,4rem); position:relative; }
+section { padding: clamp(3.5rem,7vw,8rem) clamp(1.2rem,5vw,4rem); position:relative; scroll-margin-top: calc(var(--nav-h) + 1rem); }
 .section-label {
   font-size:0.67rem; letter-spacing:0.2em; text-transform:uppercase;
   color:var(--accent2); margin-bottom:0.85rem;
@@ -501,10 +502,10 @@ footer {
     <div class="nav-logo">YP/</div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Hackathons</a></li>
       <li><a href="#courses">Courses</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Connect</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -514,10 +515,10 @@ footer {
   <!-- MOBILE DRAWER -->
   <ul class="nav-drawer" id="nav-drawer" aria-hidden="true">
     <li><a href="#about">About</a></li>
-    <li><a href="#projects">Work</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Hackathons</a></li>
     <li><a href="#courses">Courses</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Connect</a></li>
   </ul>
 
   <!-- HERO -->
