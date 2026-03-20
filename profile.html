@@ -193,7 +193,7 @@ nav {
   min-height: 100svh;
   padding: calc(var(--nav-h) + 3.5rem) clamp(1.2rem,5vw,4rem) clamp(3rem,6vw,5rem);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   align-items: center;
   gap: clamp(2rem, 4vw, 5rem);
   position: relative; overflow: hidden;
@@ -214,7 +214,7 @@ nav {
 }
 @media (max-width: 600px) { .floating-code { display: none; } }
 
-.hero-text { position: relative; z-index: 2; max-width: 540px; }
+.hero-text { position: relative; z-index: 2; min-width: 0; max-width: 500px; }
 .hero-tag {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: clamp(0.58rem, 1.6vw, 0.7rem); letter-spacing: 0.13em; text-transform: uppercase;
@@ -227,11 +227,11 @@ nav {
 .hero-name {
   display:flex; flex-wrap:wrap; align-items:baseline; gap:0.18em;
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(2.6rem, 6.5vw, 6rem);
+  font-size: clamp(2.35rem, 5.8vw, 5.4rem);
   line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 1.2rem;
   animation: fade-up 0.8s 0.15s ease both;
 }
-.hero-name .line1, .hero-name .line2 { display:inline-block; white-space:nowrap; }
+.hero-name .line1, .hero-name .line2 { display:inline-block; max-width:100%; white-space:nowrap; }
 .hero-name .line1 { color:var(--text); }
 .hero-name .line2 {
   background:linear-gradient(135deg,var(--accent1) 0%,var(--accent2) 50%,var(--accent3) 100%);
@@ -282,7 +282,7 @@ nav {
 .btn-secondary:hover { border-color:var(--accent2); background:rgba(6,182,212,0.07); }
 
 /* Profile card */
-.hero-visual { position:relative; z-index:2; width:100%; display:flex; justify-content:flex-end; animation:fade-up 0.8s 0.25s ease both; }
+.hero-visual { position:relative; z-index:2; min-width:0; width:100%; display:flex; justify-content:center; animation:fade-up 0.8s 0.25s ease both; }
 .profile-card {
   width:min(100%, 430px);
   margin-inline:auto;
@@ -338,7 +338,7 @@ nav {
 .scroll-line { width:1px; height:42px; background:linear-gradient(to bottom,var(--accent2),transparent); animation:scroll-line 2s ease-in-out infinite; }
 
 /* === Hero responsive === */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .hero { grid-template-columns:1fr; padding-top:calc(var(--nav-h)+2.5rem); gap:2.5rem; }
   .hero-text { display:flex; flex-direction:column; align-items:center; text-align:center; }
   .hero-name { justify-content:center; }
@@ -349,6 +349,12 @@ nav {
 }
 @media (max-width: 480px) {
   .hero { padding-top:calc(var(--nav-h)+2rem); }
+  .hero-tag { justify-content:center; max-width:100%; text-align:center; line-height:1.5; }
+  .hero-name { flex-direction:column; align-items:center; gap:0.08em; font-size:clamp(2.15rem, 12vw, 3.35rem); }
+  .profile-card { padding:1.15rem; }
+  .profile-stats { gap:0.45rem; }
+  .stat-label { font-size:0.54rem; }
+  .profile-badges { justify-content:center; }
   .hero-ctas { flex-direction:column; width:100%; max-width:320px; }
   .btn-primary, .btn-secondary { width:100%; }
   .nav-drawer {
