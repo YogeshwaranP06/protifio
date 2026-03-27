@@ -191,7 +191,7 @@ nav {
 .hero {
   min-height: 100svh;
   min-height: calc(100svh - var(--nav-h));
-  padding: calc(var(--nav-h) + 2.9rem) clamp(1.2rem,5vw,4rem) clamp(2.5rem,5vw,4rem);
+  padding: calc(var(--nav-h) + 3.5rem) clamp(1.2rem,5vw,4rem) clamp(2.5rem,5vw,4rem);
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 380px);
   align-items: center;
@@ -226,10 +226,10 @@ nav {
 .hero-tag-dot { width:6px; height:6px; background:var(--accent2); border-radius:50%; animation:pulse 2s infinite; }
 
 .hero-name {
-  display: flex; flex-wrap: nowrap; align-items:baseline; gap:0.16em;
+  display:flex; flex-wrap:nowrap; align-items:baseline; gap:0.14em;
   font-family: 'Syne', sans-serif; font-weight: 800;
   font-size: clamp(2.6rem, 4.8vw, 4.9rem);
-  line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 1.2rem;
+  line-height: 0.95; letter-spacing: -0.04em; margin-top: 0.45rem; margin-bottom: 1.2rem;
   animation: fade-up 0.8s 0.15s ease both;
 }
 .hero-name .line1, .hero-name .line2 { display:inline-block; max-width:100%; white-space:nowrap; }
@@ -340,7 +340,7 @@ nav {
 
 /* === Hero responsive === */
 @media (max-width: 1024px) {
-  .hero { min-height:auto; grid-template-columns:1fr; padding-top:calc(var(--nav-h)+2.6rem); gap:2rem; }
+  .hero { min-height:auto; grid-template-columns:1fr; padding-top:calc(var(--nav-h)+3.75rem); gap:2rem; }
   .hero-text { display:flex; flex-direction:column; align-items:center; text-align:center; max-width:640px; margin-inline:auto; }
   .hero-name { justify-content:center; flex-wrap:wrap; }
   .hero-desc { max-width:520px; }
@@ -349,7 +349,7 @@ nav {
   .scroll-indicator { display:none; }
 }
 @media (max-width: 768px) {
-  .hero { padding-top:calc(var(--nav-h)+2.75rem); }
+  .hero { padding-top:calc(var(--nav-h)+4.5rem); }
   .hero-tag { justify-content:center; max-width:100%; text-align:center; line-height:1.5; }
   .hero-name { justify-content:center; flex-wrap:nowrap; gap:0.12em; font-size:clamp(1.65rem, 7.2vw, 2.35rem); line-height:1; }
   .hero-name .line1, .hero-name .line2 { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:center; }
